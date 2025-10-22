@@ -1,11 +1,11 @@
-import './globals.css'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-import type { Metadata } from 'next'
+﻿import "./globals.css"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Kaalis Magazine',
-  description: 'Magazine digital lifestyle d’Abidjan',
+  title: "Kaalis Magazine",
+  description: "Magazine digital lifestyle dAbidjan",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
