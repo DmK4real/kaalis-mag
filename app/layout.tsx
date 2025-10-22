@@ -1,11 +1,13 @@
-﻿import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import type { Metadata } from "next"
+﻿import './globals.css'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Kaalis Magazine",
-  description: "Magazine digital lifestyle dAbidjan",
+  title: { default: 'Kaalis Magazine', template: '%s — Kaalis' },
+  description: 'Magazine digital lifestyle d’Abidjan',
+  metadataBase: new URL('http://localhost:3000'),
+  openGraph: { siteName: 'Kaalis Magazine', type: 'website' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
