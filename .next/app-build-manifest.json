@@ -1,0 +1,40 @@
+{
+  "pages": {
+    "/(site)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(site)/layout.css",
+      "static/chunks/app/(site)/layout.js"
+    ],
+    "/(site)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/page.js"
+    ],
+    "/(site)/lieux/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/lieux/page.js"
+    ],
+    "/(site)/personnalites/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/personnalites/page.js"
+    ],
+    "/(site)/style/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/style/page.js"
+    ],
+    "/(site)/culture/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/culture/page.js"
+    ],
+    "/(site)/communaute/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(site)/communaute/page.js"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/personnalites/page": "app/(site)/personnalites/page.js",
+  "/(site)/lieux/page": "app/(site)/lieux/page.js",
+  "/(site)/style/page": "app/(site)/style/page.js",
+  "/(site)/culture/page": "app/(site)/culture/page.js",
+  "/(site)/communaute/page": "app/(site)/communaute/page.js"
+}
