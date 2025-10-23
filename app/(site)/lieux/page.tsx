@@ -1,7 +1,7 @@
 import { sanity } from '@/lib/sanity'
 import { listBySection } from '@/lib/queries'
 import { SectionTitle } from '@/components/section-title'
-import { ArticleCard } from '@/components/article-card'
+import { ArticleCard } from '@/components/card-article'
 
 export default async function StylePage() {
   const articles = await sanity.fetch(listBySection('style'))

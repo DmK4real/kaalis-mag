@@ -1,7 +1,11 @@
-import { sanity } from '@/lib/sanity'
-import { listBySection } from '@/lib/queries'
-import { SectionTitle } from '@/components/section-title'
-import { CardArticle } from '@/components/card-article'
+// app/(site)/agenda/page.tsx
+import { EventCard, type EventItem } from "@/components/event-card"
+
+const events: EventItem[] = [
+  { slug:"dakart-2026", title:"Dak’Art — Biennale de Dakar", date:"Mai 2026", city:"Dakar", venue:"Divers lieux", category:"Arts visuels" },
+  { slug:"abidjan-musiques", title:"Abidjan — Nuits musicales", date:"Juin 2026", city:"Abidjan", venue:"Institut", category:"Musique" },
+  { slug:"lagos-fashion", title:"Lagos Fashion Days", date:"Juillet 2026", city:"Lagos", venue:"Front de mer", category:"Mode" },
+]
 
 export default function Loading() {
   return (

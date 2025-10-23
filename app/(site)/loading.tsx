@@ -1,8 +1,3 @@
-import { sanity } from '@/lib/sanity'
-import { listBySection } from '@/lib/queries'
-import { SectionTitle } from '@/components/section-title'
-import { CardArticle } from '@/components/card-article'
-
 export default function Loading() {
   return (
     <div className="mx-auto max-w-6xl px-4 space-y-8 animate-pulse">

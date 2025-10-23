@@ -1,44 +1,46 @@
-import { sanity } from '@/lib/sanity'
-import { latestArticles } from '@/lib/queries'
-import { SectionTitle } from '@/components/section-title'
-import { ArticleCard } from '@/components/article-card'
+import { Hero } from "@/components/hero"
+import { CardArticle } from "@/components/card-article"
 
-export default async function Home() {
-  const articles = await sanity.fetch(latestArticles)
+const hero = {
+  slug: "lancement-kaalis",
+  title: "Kaalis, un nouveau regard sur la culture & le style",
+  cover:
+    "https://images.unsplash.com/photo-1532634896-26909d0d4b6a?q=80&w=1600&auto=format&fit=crop",
+  category: "Culture",
+  excerpt: "Manifeste, lignes éditoriales et prochains dossiers.",
+}
 
+const items: CardArticle[] = [
+  {
+    slug: "style-ss26",
+    title: "Les silhouettes qui vont dominer SS26",
+    category: "Style",
+    cover:
+      "https://images.unsplash.com/photo-1548883354-94bcfe321cbb?q=80&w=1600&auto=format&fit=crop",
+    date: "Oct 2025",
+  },
+  {
+    slug: "lieux-abidjan",
+    title: "5 lieux à (re)découvrir à Abidjan",
+    category: "Lieux",
+    cover:
+      "https://images.unsplash.com/photo-1520975659191-46ad18acb7d8?q=80&w=1600&auto=format&fit=crop",
+    date: "Oct 2025",
+  },
+]
+
+export default function Home() {
   return (
-    <div className="space-y-12">
-      <section>
-        <SectionTitle>À la une</SectionTitle>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((a: any) => (
-            <ArticleCard key={a.slug} article={a} />
+    <div className="mx-auto max-w-6xl space-y-10 px-4">
+      <Hero item={hero} />
+
+      <section className="rounded-2xl border bg-[hsl(var(--primary))]/6 p-6">
+        <h2 className="section-title !text-[hsl(var(--primary))]">À la Une</h2>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <CardArticle key={item.slug} {...item} />
           ))}
         </div>
-      </section>
-
-      <section className="rounded-2xl bg-palm-500/5 p-8">
-        <h3 className="font-display text-2xl">Newsletter</h3>
-        <p className="mt-2 max-w-prose">
-          Recevez chaque mois le meilleur de la scène d’Abidjan : lieux,
-          portraits, sélections.
-        </p>
-        <form
-          className="mt-4 flex gap-2"
-          action="/api/newsletter"
-          method="post"
-        >
-          <input
-            className="flex-1 rounded-2xl border px-4 py-2"
-            placeholder="Votre email"
-            name="email"
-            type="email"
-            required
-          />
-          <button className="rounded-2xl bg-black px-5 py-2 text-white">
-            S’inscrire
-          </button>
-        </form>
       </section>
     </div>
   )

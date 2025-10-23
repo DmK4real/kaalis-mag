@@ -1,8 +1,8 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typedRoutes: true,
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: '**' }]
-  }
-};
-export default nextConfig;
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
+  },
+}
+export default nextConfig

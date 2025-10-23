@@ -1,15 +1,22 @@
-import { sanity } from '@/lib/sanity'
-import { listBySection } from '@/lib/queries'
-import { SectionTitle } from '@/components/section-title'
-import { ArticleCard } from '@/components/article-card'
+// app/(site)/communaute/page.tsx
+export const metadata = { title: "Communauté — KAALIS" }
 
-export default async function StylePage() {
-  const articles = await sanity.fetch(listBySection('style'))
+export default function Page() {
+  const items = [
+    { title:"Réseau KAALIS", text:"Rencontres trimestrielles dans plusieurs villes." },
+    { title:"Appels à contributions", text:"Photographes, auteur·es, artistes : proposez vos sujets." },
+    { title:"Bénévolat / Partenariats", text:"Soutenir des projets, des ateliers, des festivals." },
+  ]
   return (
-    <div>
-      <SectionTitle>Communaute</SectionTitle>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((a: any) => <ArticleCard key={a.slug} article={a} />)}
+    <div className="mx-auto max-w-6xl px-4 space-y-8">
+      <h1 className="section-title">Communauté</h1>
+      <div className="grid gap-6 md:grid-cols-3">
+        {items.map((x, i) => (
+          <div key={i} className="rounded-2xl border p-5">
+            <h3 className="text-xl font-semibold">{x.title}</h3>
+            <p className="text-muted-foreground mt-2">{x.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
